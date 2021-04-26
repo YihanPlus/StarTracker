@@ -6,6 +6,11 @@
     height: 410px;
 }
 
+.sat-list {
+    height: 300px;
+    overflow: scroll;
+}
+
 .sat-list-btn {
     text-transform: none;
     padding: 10px 36px;
@@ -13,4 +18,11 @@
     font-size: 1em;
     color: #ffffff;
     margin-bottom: 10px;
+}
+
+.spin-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 335px;
 }
