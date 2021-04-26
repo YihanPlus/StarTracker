@@ -1,17 +1,22 @@
 import React from 'react';
 import SatSetting from "./SatSetting"
+import SatelliteList from "./SatelliteList"
+import {Row, Col} from 'antd';
 
 class Main extends React.Component {
     render() {
         return (
-            <div className='main'>
-                <div className="left-side">
-                    <SatSetting onShow={}/>
-                </div>
-                <div className="right-side">
+            <Row className='main'>
+                <Col span={8}>
+                    <div className="left-side">
+                        <SatSetting/>
+                        <SatelliteList/>
+                    </div>
+                </Col>
+                <Col span={16} className="right-side">
                     right
-                </div>
-            </div>
+                </Col>
+            </Row>
         )
     }
 }
