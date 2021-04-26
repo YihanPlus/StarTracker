@@ -46,7 +46,7 @@ class SatelliteList extends React.Component {
                 <Button className="sat-list-btn"
                         style={{
                             textAlign: "center",
-                            background: "#0a2a56",
+                            background: "linear-gradient(to left, #282c34, #1b528d)",
                             color: "#fff",
                             margin: "10px"}}
                         onClick={this.onShowSatMap}>

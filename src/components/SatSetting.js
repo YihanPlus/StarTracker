@@ -95,7 +95,7 @@ class SatSetting extends React.Component {
                     <Button style={{
                         marginLeft: 100,
                         textAlign: "center",
-                        background: "#0a2a56",
+                        background: "linear-gradient(to left, #282c34, #1b528d)",
                         color: "#fff",
                         marginBottom: "10px"
                     }}

@@ -14,7 +14,7 @@
 .sat-list-btn {
     text-transform: none;
     padding: 10px 36px;
-    background-color: #282c34;
+    background: linear-gradient(#282c34, #1b528d);
     font-size: 1em;
     color: #ffffff;
     margin-bottom: 10px;

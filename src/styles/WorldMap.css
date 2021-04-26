@@ -1,0 +1,8 @@
+.map-box {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 20px;
+    height: 750px;
+    width: 1200px;
+}

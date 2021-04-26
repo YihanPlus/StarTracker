@@ -4,6 +4,7 @@ import SatelliteList from "./SatelliteList"
 import {Row, Col} from 'antd';
 import axios from "axios";
 import {NEARBY_SATELLITE, SAT_API_KEY, STARLINK_CATEGORY} from "../constants";
+import WorldMap from "./WorldMap"
 
 // sibling data communication
 class Main extends React.Component {
@@ -61,7 +62,7 @@ class Main extends React.Component {
                     </div>
                 </Col>
                 <Col span={16} className="right-side">
-                    right
+                    <WorldMap />
                 </Col>
             </Row>
         )
