@@ -32,6 +32,7 @@ class SatelliteList extends React.Component {
         return list;
     }
 
+    // pass selected sat list to Main component (child -> parent)
     onShowSatMap = () => {
         this.props.onShowMap(this.state.selected);
     }
@@ -53,6 +54,8 @@ class SatelliteList extends React.Component {
                 </Button>
 
                 <hr color="#0a2a56" size="1" width="150px"/>
+
+                <br />
 
                 {
                     isLoad ?
