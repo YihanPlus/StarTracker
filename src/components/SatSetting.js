@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, Button, InputNumber, Input} from 'antd';
+import {Form, Button, InputNumber} from 'antd';
 
 
 class SatSetting extends React.Component {
@@ -106,6 +106,7 @@ class SatSetting extends React.Component {
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 // console.log('Received values of form: ', values);
+                // pass to parent component
                 this.props.onShow(values);
             }
         })
