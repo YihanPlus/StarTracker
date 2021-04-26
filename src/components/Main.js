@@ -52,7 +52,6 @@ class Main extends React.Component {
                         <SatelliteList
                             satInfo={satInfo}
                             isLoading={isLoadingList}
-
                         />
                     </div>
                 </Col>

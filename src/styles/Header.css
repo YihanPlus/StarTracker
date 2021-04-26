@@ -1,6 +1,6 @@
 .App-logo {
     height: 28px;
-    margin-left: 20px;
+    margin-left: 48px;
     margin-bottom: 10px;
 }
 
@@ -16,7 +16,8 @@
 }
 
 .title {
-    margin-left: 50px;
+    margin-left: 10px;
     font-size: 20px;
+    height: 28px;
     font-weight: bold;
 }

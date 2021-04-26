@@ -5,10 +5,11 @@ class Header extends Component {
     render() {
         return (
             <header className="App-header">
+                {/*<img src={earth} className="App-small-logo" alt="small-logo" />*/}
+                <img src={spacex_logo} className="App-logo" alt="logo" />
                 <div className="title">
                     StarLink Tracker
                 </div>
-                <img src={spacex_logo} className="App-logo" alt="logo" />
             </header>
         )
     }

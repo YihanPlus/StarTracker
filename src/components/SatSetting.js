@@ -1,7 +1,6 @@
 import React from 'react';
 import {Form, Button, InputNumber} from 'antd';
 
-
 class SatSetting extends React.Component {
     render() {
         // get form object from props.form
@@ -20,80 +19,87 @@ class SatSetting extends React.Component {
 
         return (
             <Form {...formItemLayout} className="sat-setting" onSubmit={this.showSatellite}>
-                <Form.Item label="Longitude(degrees)">
-                    {getFieldDecorator("longitude", {
-                        rules: [
-                            {
-                                required: true,
-                                message: "Please input your longitude"
-                            }
-                        ],
-                    })(<InputNumber min={-180} max={180}
-                                    style={{width: "100%"}}
-                                    placeholder="Please input your longitude"
-                    />)
-                    }
-                </Form.Item>
-                <Form.Item label="Latitude(degrees)">
-                    {getFieldDecorator("latitude", {
-                        rules: [
-                            {
-                                required: true,
-                                message: "Please input your latitude"
-                            }
-                        ],
-                    })(<InputNumber min={-90} max={90}
-                                    style={{width: "100%"}}
-                                    placeholder="Please input your latitude"
-                    />)
-                    }
-                </Form.Item>
-                <Form.Item label="Elevation(degrees)">
-                    {getFieldDecorator("elevation", {
-                        rules: [
-                            {
-                                required: true,
-                                message: "Please input your elevation"
-                            }
-                        ],
-                    })(<InputNumber min={-413} max={8850}
-                                    style={{width: "100%"}}
-                                    placeholder="Please input your elevation"
-                    />)
-                    }
-                </Form.Item>
-                <Form.Item label="Altitude(degrees)">
-                    {getFieldDecorator("altitude", {
-                        rules: [
-                            {
-                                required: true,
-                                message: "Please input your altitude"
-                            }
-                        ],
-                    })(<InputNumber min={0} max={90}
-                                    style={{width: "100%"}}
-                                    placeholder="Please input your altitude"
-                    />)
-                    }
-                </Form.Item>
-                <Form.Item label="Duration(secs)">
-                    {getFieldDecorator("duration", {
-                        rules: [
-                            {
-                                required: true,
-                                message: "Please input your duration"
-                            }
-                        ],
-                    })(<InputNumber min={0} max={90}
-                                    style={{width: "100%"}}
-                                    placeholder="Please input your duration"
-                    />)
-                    }
-                </Form.Item>
+                <div className="setting-fields">
+                    <Form.Item label="Longitude(degrees)">
+                        {getFieldDecorator("longitude", {
+                            rules: [
+                                {
+                                    required: true,
+                                    message: "Please input your longitude"
+                                }
+                            ],
+                        })(<InputNumber min={-180} max={180}
+                                        style={{width: "100%"}}
+                                        placeholder="Please input longitude"
+                        />)
+                        }
+                    </Form.Item>
+                    <Form.Item label="Latitude(degrees)">
+                        {getFieldDecorator("latitude", {
+                            rules: [
+                                {
+                                    required: true,
+                                    message: "Please input your latitude"
+                                }
+                            ],
+                        })(<InputNumber min={-90} max={90}
+                                        style={{width: "100%"}}
+                                        placeholder="Please input latitude"
+                        />)
+                        }
+                    </Form.Item>
+                    <Form.Item label="Elevation(degrees)">
+                        {getFieldDecorator("elevation", {
+                            rules: [
+                                {
+                                    required: true,
+                                    message: "Please input your elevation"
+                                }
+                            ],
+                        })(<InputNumber min={-413} max={8850}
+                                        style={{width: "100%"}}
+                                        placeholder="Please input elevation"
+                        />)
+                        }
+                    </Form.Item>
+                    <Form.Item label="Altitude(degrees)">
+                        {getFieldDecorator("altitude", {
+                            rules: [
+                                {
+                                    required: true,
+                                    message: "Please input your altitude"
+                                }
+                            ],
+                        })(<InputNumber min={0} max={90}
+                                        style={{width: "100%"}}
+                                        placeholder="Please input altitude"
+                        />)
+                        }
+                    </Form.Item>
+                    <Form.Item label="Duration(secs)">
+                        {getFieldDecorator("duration", {
+                            rules: [
+                                {
+                                    required: true,
+                                    message: "Please input your duration"
+                                }
+                            ],
+                        })(<InputNumber min={0} max={90}
+                                        style={{width: "100%"}}
+                                        placeholder="Please input duration"
+                        />)
+                        }
+                    </Form.Item>
+                </div>
                 <Form.Item className="show-nearby">
-                    <Button type="primary"
-                            htmlType="submit"
-                            style={{textAlign: "center"}}>
+                    <Button style={{
+                        marginLeft: 100,
+                        textAlign: "center",
+                        background: "#0a2a56",
+                        color: "#fff",
+                        marginBottom: "10px"
+                    }}
+                            htmlType="submit">
                         Find Nearby Satellite
                     </Button>
                 </Form.Item>
