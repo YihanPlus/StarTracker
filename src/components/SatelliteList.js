@@ -3,6 +3,35 @@ import {Button, Spin, List, Avatar, Checkbox} from 'antd';
 import satellite from '../assets/images/satellite.png'
 
 class SatelliteList extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            selected: [],
+            isLoad: false
+        }
+    }
+
+    onChange = e => {
+        console.log(e.target);      //指向返回事件的目标节点(触发该事件的节点)
+        const { dataInfo, checked } = e.target;
+        const { selected } = this.state;
+        const list = this.addOrRemove(dataInfo, checked, selected);
+        this.setState( {
+            selected: list
+        })
+    }
+
+    addOrRemove = (item, status, list) => {
+        const found = list.some(entry => entry.satid === item.satid);       // some(): pick all valid items
+        // if sat is not in the list -> add to the list
+        // else -> do nothing
+        if (status && !found) list.push(item);
+        if (!status && found) {
+            list = list.filter( entry => { return entry.satid !== item.satid; });
+        }
+        return list;
+    }
+
     render() {
         const satList = this.props.satInfo ? this.props.satInfo.above : [];
         const {isLoad} = this.props.isLoading;
@@ -14,10 +43,10 @@ class SatelliteList extends React.Component {
                             textAlign: "center",
                             background: "#0a2a56",
                             color: "#fff",
-                            margin: "10px"
-                        }}>
+                            margin: "10px"}}>
                     Track on the map
                 </Button>
+
                 <hr color="#0a2a56" size="1" width="150px"/>
 
                 {
