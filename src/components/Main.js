@@ -4,7 +4,7 @@ import SatelliteList from "./SatelliteList"
 import {Row, Col} from 'antd';
 import axios from "axios";
 import {NEARBY_SATELLITE, SAT_API_KEY, STARLINK_CATEGORY} from "../constants";
-import WorldMap from "./WorldMap"
+import WorldMap from "./WorldMap";
 
 // sibling data communication
 class Main extends React.Component {
@@ -12,13 +12,15 @@ class Main extends React.Component {
         super();
         this.state = {
             satInfo: null,
+            satList: null,
+            setting: null,
             isLoadingList: false
         };
     }
 
     showNearBySatellite = (setting) => {
         this.setState({
-            settings: setting
+            setting: setting
         })
         this.fetchSatellite(setting);
     }
@@ -42,17 +44,23 @@ class Main extends React.Component {
             })
     }
 
-    showMap = () => {
+    showMap = (selected) => {
+        // store every data change via setState
         console.log('show on the map');
+        this.setState(preState => ({
+            ...preState,
+            satList: [...selected]          // copy
+        }))
     }
 
     render() {
-        const { satInfo, isLoadingList } = this.state;
+        const { satInfo, satList, setting, isLoadingList } = this.state;
 
         return (
             <Row className='main'>
                 <Col span={8}>
                     <div className="left-side">
+                        {/* child->parent*/}
                         <SatSetting onShow={this.showNearBySatellite}/>
                         <SatelliteList
                             satInfo={satInfo}
@@ -62,7 +70,10 @@ class Main extends React.Component {
                     </div>
                 </Col>
                 <Col span={16} className="right-side">
-                    <WorldMap />
+                    {/* parent->child*/}
+                    <WorldMap
+                        satData={satList}
+                        observerData={setting} />
                 </Col>
             </Row>
         )
