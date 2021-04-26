@@ -32,6 +32,10 @@ class SatelliteList extends React.Component {
         return list;
     }
 
+    onShowSatMap = () => {
+        this.props.onShowMap(this.state.selected);
+    }
+
     render() {
         const satList = this.props.satInfo ? this.props.satInfo.above : [];
         const {isLoad} = this.props.isLoading;
@@ -43,7 +47,8 @@ class SatelliteList extends React.Component {
                             textAlign: "center",
                             background: "#0a2a56",
                             color: "#fff",
-                            margin: "10px"}}>
+                            margin: "10px"}}
+                        onClick={this.onShowSatMap}>
                     Track on the map
                 </Button>
 

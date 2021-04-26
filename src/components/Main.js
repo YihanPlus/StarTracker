@@ -41,6 +41,10 @@ class Main extends React.Component {
             })
     }
 
+    showMap = () => {
+        console.log('show on the map');
+    }
+
     render() {
         const { satInfo, isLoadingList } = this.state;
 
@@ -52,6 +56,7 @@ class Main extends React.Component {
                         <SatelliteList
                             satInfo={satInfo}
                             isLoading={isLoadingList}
+                            onShowMap={this.showMap}
                         />
                     </div>
                 </Col>
