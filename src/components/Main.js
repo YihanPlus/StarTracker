@@ -6,7 +6,7 @@ class Main extends React.Component {
         return (
             <div className='main'>
                 <div className="left-side">
-                    <SatSetting />
+                    <SatSetting onShow={}/>
                 </div>
                 <div className="right-side">
                     right
