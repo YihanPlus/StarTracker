@@ -1,6 +1,6 @@
 # 🔭  Track Satellites with Starlink  🔭
 
-This is a visualized web application that enables users to track satellites in real time based on the geo-location.  
+Starlink is a visualized web application that enables users to track satellites in real time based on the geo-location.  
 
 ![alt text](https://github.com/YihanPlus/Starlink/blob/master/src/assets/images/display.png?raw=true)
 
